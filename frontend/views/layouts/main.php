@@ -3,6 +3,7 @@
 /* @var $this \yii\web\View */
 /* @var $content string */
 
+use yii\helpers\Url;
 use yii\helpers\Html;
 use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
@@ -36,11 +37,16 @@ AppAsset::register($this);
         ],
     ]);
     $menuItems = [
-        ['label' => 'Home', 'url' => ['/site/index']],
-        ['label' => 'About', 'url' => ['/site/about']],
-        ['label' => 'Contact', 'url' => ['/site/contact']],
+        ['label' => 'Compnay', 'url' => ['/compnay/index']],
+        ['label' => 'Balance Holder', 'url' => ['balance-holder/index']],
+        ['label' => 'Address', 'url' => ['address/index']],
+        ['label' => 'Device', 'url' => ['device/index']],
+        ['label' => 'UnitAlfa', 'url' => ['unit-alfa/index']],
+        ['label' => 'UnitBeta', 'url' => ['unit-beta/index']],
+        ['label' => 'UnitAlfaData', 'url' => ['unit-alfa-data/index']],
+        ['label' => 'UnitBetaData', 'url' => ['unit-beta-data/index']]
     ];
-    if (Yii::$app->user->isGuest) {
+    /*if (Yii::$app->user->isGuest) {
         $menuItems[] = ['label' => 'Signup', 'url' => ['/site/signup']];
         $menuItems[] = ['label' => 'Login', 'url' => ['/site/login']];
     } else {
@@ -52,7 +58,7 @@ AppAsset::register($this);
             )
             . Html::endForm()
             . '</li>';
-    }
+    } */
     echo Nav::widget([
         'options' => ['class' => 'navbar-nav navbar-right'],
         'items' => $menuItems,
